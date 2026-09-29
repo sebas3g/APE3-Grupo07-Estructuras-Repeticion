@@ -15,11 +15,9 @@
 **Paso 8:** Imprimir en pantalla el promedio general, nota mayor, nota menor, y las cantidades/porcentajes de aprobados y reprobados.
 **Paso 9:** Fin del programa.
 
----
 
 ## Pseudocódigo
 
-`
 Algoritmo Ejercicio06
 	
     Definir n, i, aprobados, reprobados Como Entero
@@ -83,4 +81,3 @@ Algoritmo Ejercicio06
     Escribir "Aprobados: ", aprobados, " (", porcApr, "%)"
     Escribir "Reprobados: ", reprobados, " (", porcRep, "%)"
 FinAlgoritmo
-`
