@@ -5,7 +5,7 @@
 * Sebastian Navas
 * Francis
 * David
-* Dixon
+* Dixon Prado
 
 ## Descripción
 
