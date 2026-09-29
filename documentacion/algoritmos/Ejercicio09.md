@@ -1,3 +1,27 @@
+## Algoritmo
+
+**Paso 1:** Inicio del programa.
+
+**Paso 2:** Inicializar en cero los contadores globales del curso (`totalP = 0`, `totalA = 0`).
+
+**Paso 3:** Solicitar y leer la cantidad de estudiantes (`N`) y la cantidad de días a evaluar (`D`).
+
+**Paso 4:** Iniciar un ciclo externo para recorrer cada estudiante, desde `i = 1` hasta `N`.
+*   **Paso 4.1:** Inicializar en cero los contadores individuales del estudiante actual (`estP = 0`, `estA = 0`).
+*   **Paso 4.2:** Iniciar un ciclo interno para recorrer cada día del estudiante actual, desde `j = 1` hasta `D`.
+    *   **Paso 4.2.1:** Solicitar y leer el `estado` de asistencia del día.
+    *   **Paso 4.2.2:** Validar la entrada. Si `estado` es distinto de 'P' y distinto de 'A', mostrar mensaje de error y regresar al Paso 4.2.1 hasta que sea válido.
+    *   **Paso 4.2.3:** Evaluar asistencia: si `estado` es igual a 'P', incrementar el contador individual (`estP`) y el global (`totalP`).
+    *   **Paso 4.2.4:** Evaluar ausencia: si `estado` es igual a 'A', incrementar el contador individual (`estA`) y el global (`totalA`).
+*   **Paso 4.3:** Finalizado el ciclo interno (días), imprimir el resumen individual mostrando las asistencias (`estP`) y ausencias (`estA`) del estudiante actual.
+
+**Paso 5:** Finalizado el ciclo externo (estudiantes), imprimir el resumen global mostrando el total de asistencias (`totalP`) y el total de ausencias (`totalA`) de todo el curso.
+
+**Paso 6:** Fin del programa.
+
+
+## Pseudocódigo
+
 Algoritmo Ejercicio09
 
     Definir n, d, i, j, totalP, totalA, estP, estA Como Entero
