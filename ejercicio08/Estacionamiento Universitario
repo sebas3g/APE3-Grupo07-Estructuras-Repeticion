@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class EstacionamientoUniversitario {
+
+    static Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+
+    // Pide un entero y repite hasta que el dato sea numerico
+    static int leerEntero(String mensaje) {
+        System.out.print(mensaje);
+        while (!sc.hasNextInt()) {
+            sc.next();
+            System.out.print("Entrada invalida. " + mensaje);
+        }
+        return sc.nextInt();
+    }
+
+    static void mostrarMenu() {
+        System.out.println();
+        System.out.println("===== ESTACIONAMIENTO UNIVERSITARIO =====");
+        System.out.println("1. Motocicleta   ($0.50 por hora)");
+        System.out.println("2. Automovil     ($1.00 por hora)");
+        System.out.println("3. Camioneta     ($1.50 por hora)");
+        System.out.println("4. Camion / Bus  ($2.50 por hora)");
+        System.out.println("0. Finalizar (centinela)");
+    }
+
+    public static void main(String[] args) {
+        String tipo = "";
+        double tarifa = 0;
+        int horas;
+        double valor;
+        double recaudacionTotal = 0;   // acumulador del dinero recaudado
+        int totalVehiculos = 0;        // contador de vehiculos registrados
+        int[] cantidadPorTipo = new int[4];
+
+        mostrarMenu();
+        int opcion = leerEntero("Tipo de vehiculo (0 para terminar): ");
+
+        // El ciclo termina cuando el usuario escribe el centinela: 0
+        while (opcion != 0) {
+
+            if (opcion >= 1 && opcion <= 4) {
+            
+                switch (opcion) {
+                    case 1:
+                        tipo = "Motocicleta";
+                        tarifa = 0.50;
+                        break;
+                    case 2:
+                        tipo = "Automovil";
+                        tarifa = 1.00;
+                        break;
+                    case 3:
+                        tipo = "Camioneta";
+                        tarifa = 1.50;
+                        break;
+                    default:
+                        tipo = "Camion / Bus";
+                        tarifa = 2.50;
+                }
+
+                // Validacion de horas: entre 1 y 24
+                horas = leerEntero("Numero de horas (1 a 24): ");
+                while (horas < 1 || horas > 24) {
+                    System.out.println("Las horas deben estar entre 1 y 24.");
+                    horas = leerEntero("Numero de horas (1 a 24): ");
+                }
+
+                // Calculo individual y acumulacion
+                valor = horas * tarifa;
+                recaudacionTotal += valor;
+                totalVehiculos++;
+                cantidadPorTipo[opcion - 1]++;
+
+                System.out.printf("%s | %d h x $%.2f = $%.2f%n",
+                        tipo, horas, tarifa, valor);
+            } else {
+                System.out.println("Opcion no valida. Elija 1, 2, 3, 4 o 0 para terminar.");
+            }
+
+            mostrarMenu();
+            opcion = leerEntero("Tipo de vehiculo (0 para terminar): ");
+        }
+
+        System.out.println();
+        System.out.println("----- Reporte del dia -----");
+        System.out.println("Motocicletas:  " + cantidadPorTipo[0]);
+        System.out.println("Automoviles:   " + cantidadPorTipo[1]);
+        System.out.println("Camionetas:    " + cantidadPorTipo[2]);
+        System.out.println("Camiones/Bus:  " + cantidadPorTipo[3]);
+        System.out.println("Vehiculos registrados: " + totalVehiculos);
+        System.out.printf("Recaudacion total: $%.2f%n", recaudacionTotal);
+    }
+}
