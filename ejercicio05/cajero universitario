@@ -1,0 +1,109 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class CajeroUniversitario {
+
+    // Un solo Scanner para todo el programa (con punto decimal)
+    static Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+
+    // Pide un numero decimal y repite hasta que el usuario escriba uno valido
+    static double leerDecimal(String mensaje) {
+        System.out.print(mensaje);
+        while (!sc.hasNextDouble()) {
+            sc.next(); // descarta lo que no es numero
+            System.out.print("Entrada invalida. " + mensaje);
+        }
+        return sc.nextDouble();
+    }
+
+    // Pide un numero entero y repite hasta que el usuario escriba uno valido
+    static int leerEntero(String mensaje) {
+        System.out.print(mensaje);
+        while (!sc.hasNextInt()) {
+            sc.next();
+            System.out.print("Entrada invalida. " + mensaje);
+        }
+        return sc.nextInt();
+    }
+
+    static void mostrarMenu() {
+        System.out.println();
+        System.out.println("===== CAJERO UNIVERSITARIO =====");
+        System.out.println("1. Consultar saldo");
+        System.out.println("2. Depositar");
+        System.out.println("3. Retirar");
+        System.out.println("4. Ver numero de transacciones");
+        System.out.println("5. Salir");
+    }
+
+    public static void main(String[] args) {
+        double saldo;
+        double totalDepositado = 0;   
+        double totalRetirado = 0;     
+        int transacciones = 0;        
+        int opcion;
+        double monto;
+
+        // Validacion del saldo inicial: no puede ser negativo
+        do {
+            saldo = leerDecimal("Ingrese el saldo inicial: $");
+            if (saldo < 0) {
+                System.out.println("El saldo inicial no puede ser negativo.");
+            }
+        } while (saldo < 0);
+
+        // Ciclo principal: se ejecuta al menos una vez y termina con la opcion 5
+        do {
+            mostrarMenu();
+            opcion = leerEntero("Elija una opcion: ");
+
+            switch (opcion) {
+                case 1:
+                    System.out.printf("Saldo actual: $%.2f%n", saldo);
+                    break;
+
+                case 2:
+                    monto = leerDecimal("Monto a depositar: $");
+                    if (monto <= 0) {
+                        System.out.println("El deposito debe ser mayor que cero.");
+                    } else {
+                        saldo += monto;
+                        totalDepositado += monto;
+                        transacciones++;
+                        System.out.printf("Deposito exitoso. Nuevo saldo: $%.2f%n", saldo);
+                    }
+                    break;
+
+                case 3:
+                    monto = leerDecimal("Monto a retirar: $");
+                    if (monto <= 0) {
+                        System.out.println("El retiro debe ser mayor que cero.");
+                    } else if (monto > saldo) {
+                        System.out.println("Fondos insuficientes para ese retiro.");
+                    } else {
+                        saldo -= monto;
+                        totalRetirado += monto;
+                        transacciones++;
+                        System.out.printf("Retiro exitoso. Nuevo saldo: $%.2f%n", saldo);
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Transacciones realizadas: " + transacciones);
+                    break;
+
+                case 5:
+                    System.out.println();
+                    System.out.println("----- Resumen de la sesion -----");
+                    System.out.printf("Total depositado: $%.2f%n", totalDepositado);
+                    System.out.printf("Total retirado:   $%.2f%n", totalRetirado);
+                    System.out.printf("Saldo final:      $%.2f%n", saldo);
+                    System.out.println("Gracias por usar el cajero universitario.");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida. Elija un numero del 1 al 5.");
+            }
+        } while (opcion != 5);
+    }
+}
