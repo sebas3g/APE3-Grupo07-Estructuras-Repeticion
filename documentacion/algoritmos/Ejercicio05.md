@@ -1,4 +1,4 @@
-## Algoritmo
+## ALGORITMO
 
 Inicio.
 Pedir el saldo inicial. Si es negativo, avisar y volver a pedirlo hasta que sea cero o mayor.
@@ -13,7 +13,7 @@ Si es cualquier otro valor, avisar que la opción no es válida.
 Mientras la opción sea distinta de 5, volver al paso 4.
 Fin.
 
-## Pseudocódigo
+## PSEUDOCODIGO
 
 
     Algoritmo CajeroUniversitario
@@ -81,6 +81,7 @@ Fin.
 FinAlgoritmo
  
 SubProceso MostrarMenu()
+
     Escribir "1. Consultar saldo"
     Escribir "2. Depositar"
     Escribir "3. Retirar"
