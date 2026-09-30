@@ -1,4 +1,4 @@
-# APE3 - Grupo XX
+# APE3 - Grupo 07
 
 ## Integrantes
 
