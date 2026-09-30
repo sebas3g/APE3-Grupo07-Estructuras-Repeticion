@@ -1,7 +1,11 @@
 ## ALGORITMO
 
 Inicio.
-Pedir el saldo inicial. Si es negativo, avisar y volver a pedirlo hasta que sea cero o mayor.
+
+Pedir el saldo inicial. 
+
+Si es negativo, avisar y volver a pedirlo hasta que sea cero o mayor.
+
 Poner en cero los acumuladores totalDepositado y totalRetirado, y el contador de transacciones.
 Mostrar el menú y leer la opción elegida.
 Si la opción es 1, mostrar el saldo actual.
