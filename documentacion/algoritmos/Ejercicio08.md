@@ -1,16 +1,31 @@
 ## ALGORITMO 
 
 Inicio.
-Poner en cero la recaudación total, el contador total de vehículos y los contadores por tipo. El centinela es 0.
+
+Poner en cero la recaudación total, el contador total de vehículos y los contadores por tipo. 
+
+El centinela es 0.
+
 Mostrar el menú y leer el tipo de vehículo.
+
 Mientras la opción sea distinta de 0, repetir los pasos 5 a 10.
+
 Si la opción no está entre 1 y 4, avisar que no es válida y pasar al paso 10.
+
 Según la opción, asignar el nombre del tipo y su tarifa por hora.
-Pedir el número de horas. Si es menor que 1 o mayor que 24, avisar y volver a pedirlo.
+
+Pedir el número de horas. 
+
+Si es menor que 1 o mayor que 24, avisar y volver a pedirlo.
+
 Calcular el valor individual: horas por tarifa.
+
 Sumar el valor a la recaudación total, sumar 1 al total de vehículos y al contador de su tipo, y mostrar el detalle.
+
 Mostrar el menú y leer la siguiente opción; volver al paso 4.
+
 Cuando se ingrese 0, mostrar el reporte: cantidad por tipo, total de vehículos y recaudación total.
+
 Fin.
 
 ## PSEUDOCODIGO
