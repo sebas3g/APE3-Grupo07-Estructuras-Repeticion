@@ -7,14 +7,25 @@ Pedir el saldo inicial.
 Si es negativo, avisar y volver a pedirlo hasta que sea cero o mayor.
 
 Poner en cero los acumuladores totalDepositado y totalRetirado, y el contador de transacciones.
+
 Mostrar el menú y leer la opción elegida.
+
 Si la opción es 1, mostrar el saldo actual.
+
 Si la opción es 2, pedir el monto. Si es cero o negativo, avisar; si no, sumarlo al saldo y a totalDepositado, y sumar 1 a las transacciones.
-Si la opción es 3, pedir el monto. Si es cero o negativo, avisar. Si es mayor que el saldo, indicar fondos insuficientes. Si no, restarlo del saldo, sumarlo a totalRetirado y sumar 1 a las transacciones.
+
+Si la opción es 3, pedir el monto. Si es cero o negativo, avisar. Si es mayor que el saldo, indicar fondos insuficientes.
+
+Si no, restarlo del saldo, sumarlo a totalRetirado y sumar 1 a las transacciones.
+
 Si la opción es 4, mostrar el número de transacciones.
+
 Si la opción es 5, mostrar el resumen de la sesión y despedirse.
+
 Si es cualquier otro valor, avisar que la opción no es válida.
+
 Mientras la opción sea distinta de 5, volver al paso 4.
+
 Fin.
 
 ## PSEUDOCODIGO
