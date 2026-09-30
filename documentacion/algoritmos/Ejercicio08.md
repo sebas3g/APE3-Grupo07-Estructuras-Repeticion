@@ -16,6 +16,7 @@ Fin.
 ## PSEUDOCODIGO
 
 Algoritmo EstacionamientoUniversitario
+
     Definir opcion, horas, totalVehiculos, i Como Entero
     Definir tarifa, valor, recaudacionTotal Como Real
     Definir tipo Como Cadena
@@ -78,8 +79,9 @@ Algoritmo EstacionamientoUniversitario
     Escribir "Vehiculos registrados: ", totalVehiculos
     Escribir "Recaudacion total: $", recaudacionTotal
 FinAlgoritmo
- 
+
 SubProceso MostrarMenu()
+
     Escribir "1. Motocicleta   ($0.50 por hora)"
     Escribir "2. Automovil     ($1.00 por hora)"
     Escribir "3. Camioneta     ($1.50 por hora)"
