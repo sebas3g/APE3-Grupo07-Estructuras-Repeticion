@@ -1,22 +1,10 @@
-## Ejercicio 7. Venta de entradas CineCampus
+# Ejercicio 7. Venta de entradas CineCampus
 
-### ALGORITMO
+## ALGORITMO
 
-1. Inicio.
-2. Poner en cero el contador `numVentas` y los acumuladores `totalEntradas` y `totalAcumulado`.
-3. Sumar 1 a `numVentas`.
-4. Pedir el tipo de entrada (1 = General, 2 = Estudiante, 3 = VIP). Si no está entre 1 y 3, avisar y volver a pedirlo.
-5. Pedir la cantidad de entradas. Si es cero o negativa, avisar y volver a pedirla.
-6. Pedir el precio por entrada. Si es cero o negativo, avisar y volver a pedirlo.
-7. Según el tipo, asignar el nombre General, Estudiante o VIP.
-8. Calcular el subtotal multiplicando la cantidad por el precio. Sumar el subtotal a `totalAcumulado` y la cantidad a `totalEntradas`.
-9. Mostrar el subtotal de la venta y el total acumulado.
-10. Preguntar si desea realizar otra venta (S/N). Si la respuesta no es S ni N, avisar y volver a preguntar.
-11. Mientras la respuesta sea S, volver al paso 3.
-12. Mostrar el número de ventas, las entradas vendidas y el total recaudado.
-13. Fin.
+Inicio. Poner en cero el contador numVentas y los acumuladores totalEntradas y totalAcumulado. Sumar 1 a numVentas. Pedir el tipo de entrada (1 = General, 2 = Estudiante, 3 = VIP); si no está entre 1 y 3, avisar y volver a pedirlo. Pedir la cantidad de entradas; si es cero o negativa, avisar y volver a pedirla. Pedir el precio por entrada; si es cero o negativo, avisar y volver a pedirlo. Según el tipo, asignar el nombre General, Estudiante o VIP. Calcular el subtotal multiplicando la cantidad por el precio, sumar el subtotal a totalAcumulado y la cantidad a totalEntradas. Mostrar el subtotal de la venta y el total acumulado. Preguntar si desea realizar otra venta (S/N); si la respuesta no es S ni N, avisar y volver a preguntar. Mientras la respuesta sea S, volver a registrar una nueva venta. Al terminar, mostrar el número de ventas, las entradas vendidas y el total recaudado. Fin.
 
-### PSEUDOCÓDIGO
+## PSEUDOCODIGO
 
 ```
 Algoritmo VentaEntradasCineCampus
@@ -79,6 +67,7 @@ Algoritmo VentaEntradasCineCampus
         Repetir
             Escribir "Desea realizar otra venta? (S/N): "
             Leer respuesta
+            respuesta <- Mayusculas(respuesta)
             Si respuesta <> "S" Y respuesta <> "N" Entonces
                 Escribir "Respuesta invalida. Escriba S o N."
             FinSi
