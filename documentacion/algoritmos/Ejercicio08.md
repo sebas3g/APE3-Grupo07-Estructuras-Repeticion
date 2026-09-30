@@ -1,4 +1,4 @@
-ALGORITMO 
+## ALGORITMO 
 
 Inicio.
 Poner en cero la recaudación total, el contador total de vehículos y los contadores por tipo. El centinela es 0.
@@ -13,7 +13,7 @@ Mostrar el menú y leer la siguiente opción; volver al paso 4.
 Cuando se ingrese 0, mostrar el reporte: cantidad por tipo, total de vehículos y recaudación total.
 Fin.
 
-Pseudocódigo
+## PSEUDOCODIGO
 
 Algoritmo EstacionamientoUniversitario
     Definir opcion, horas, totalVehiculos, i Como Entero
