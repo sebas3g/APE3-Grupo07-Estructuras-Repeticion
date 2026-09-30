@@ -1,0 +1,92 @@
+## Ejercicio 7. Venta de entradas CineCampus
+
+### ALGORITMO
+
+1. Inicio.
+2. Poner en cero el contador `numVentas` y los acumuladores `totalEntradas` y `totalAcumulado`.
+3. Sumar 1 a `numVentas`.
+4. Pedir el tipo de entrada (1 = General, 2 = Estudiante, 3 = VIP). Si no está entre 1 y 3, avisar y volver a pedirlo.
+5. Pedir la cantidad de entradas. Si es cero o negativa, avisar y volver a pedirla.
+6. Pedir el precio por entrada. Si es cero o negativo, avisar y volver a pedirlo.
+7. Según el tipo, asignar el nombre General, Estudiante o VIP.
+8. Calcular el subtotal multiplicando la cantidad por el precio. Sumar el subtotal a `totalAcumulado` y la cantidad a `totalEntradas`.
+9. Mostrar el subtotal de la venta y el total acumulado.
+10. Preguntar si desea realizar otra venta (S/N). Si la respuesta no es S ni N, avisar y volver a preguntar.
+11. Mientras la respuesta sea S, volver al paso 3.
+12. Mostrar el número de ventas, las entradas vendidas y el total recaudado.
+13. Fin.
+
+### PSEUDOCÓDIGO
+
+```
+Algoritmo VentaEntradasCineCampus
+    Definir tipo, cantidad, numVentas, totalEntradas Como Entero
+    Definir precio, subtotal, totalAcumulado Como Real
+    Definir respuesta, nombreTipo Como Caracter
+
+    numVentas <- 0
+    totalEntradas <- 0
+    totalAcumulado <- 0
+
+    Repetir
+        numVentas <- numVentas + 1
+        Escribir "--- Venta ", numVentas, " ---"
+
+        // Validar tipo de entrada
+        Repetir
+            Escribir "Tipo de entrada (1=General, 2=Estudiante, 3=VIP): "
+            Leer tipo
+            Si tipo < 1 O tipo > 3 Entonces
+                Escribir "Tipo invalido. Debe ser 1, 2 o 3."
+            FinSi
+        Hasta Que tipo >= 1 Y tipo <= 3
+
+        // Validar cantidad
+        Repetir
+            Escribir "Cantidad de entradas: "
+            Leer cantidad
+            Si cantidad <= 0 Entonces
+                Escribir "La cantidad debe ser mayor que cero."
+            FinSi
+        Hasta Que cantidad > 0
+
+        // Validar precio
+        Repetir
+            Escribir "Precio por entrada: "
+            Leer precio
+            Si precio <= 0 Entonces
+                Escribir "El precio debe ser mayor que cero."
+            FinSi
+        Hasta Que precio > 0
+
+        Segun tipo Hacer
+            1:
+                nombreTipo <- "General"
+            2:
+                nombreTipo <- "Estudiante"
+            3:
+                nombreTipo <- "VIP"
+        FinSegun
+
+        subtotal <- cantidad * precio
+        totalAcumulado <- totalAcumulado + subtotal
+        totalEntradas <- totalEntradas + cantidad
+
+        Escribir "Entrada ", nombreTipo, " | Subtotal: ", subtotal
+        Escribir "Total acumulado: ", totalAcumulado
+
+        // Validar respuesta
+        Repetir
+            Escribir "Desea realizar otra venta? (S/N): "
+            Leer respuesta
+            Si respuesta <> "S" Y respuesta <> "N" Entonces
+                Escribir "Respuesta invalida. Escriba S o N."
+            FinSi
+        Hasta Que respuesta = "S" O respuesta = "N"
+    Hasta Que respuesta = "N"
+
+    Escribir "Numero de ventas: ", numVentas
+    Escribir "Entradas vendidas: ", totalEntradas
+    Escribir "Total recaudado: ", totalAcumulado
+FinAlgoritmo
+```
