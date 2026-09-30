@@ -26,7 +26,7 @@
 * Programación y pruebas de funcionamiento de los ejercicios asignados.
 * Elaboración y organización del informe en formato APE.
 
-### Dixon Padro
+### Dixon Prado
 
 * Desarrollo de los ejercicios 6 y 9.
 * Elaboración del análisis, entradas, procesos y salidas de sus ejercicios.
